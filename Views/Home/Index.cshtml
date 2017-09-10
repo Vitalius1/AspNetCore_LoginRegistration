@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model LoginRegistration.Models.User
+<h1>Register</h1>
+<form asp-controller="Home" asp-action="Register" method="post">
+    <table>
+        <tr>
+            <td><label asp-for="FirstName"></label></td>
+            <td><input asp-for="FirstName"/></td>
+            <td><span asp-validation-for="FirstName"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="LastName"></label></td>
+            <td><input asp-for="LastName"/></td>
+            <td><span asp-validation-for="LastName"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Email"></label></td>
+            <td><input asp-for="Email"/></td>
+            <td><span asp-validation-for="Email"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Password"></label></td>
+            <td><input asp-for="Password"/></td>
+            <td><span asp-validation-for="Password"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="ConfirmPassword"></label></td>
+            <td><input asp-for="ConfirmPassword"/></td>
+            <td><span asp-validation-for="ConfirmPassword"></span></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Create new User</button></td>
+            <td id="err">@ViewBag.ErrorRegister</td>
+        </tr>
+    </table>
+</form>
+<br>
+<hr>
+<br>
+<form action="/login" method="post">
+    <table>
+        <tr>
+            <td><label for="Email">Email</label></td>
+            <td><input type="text" name="LEmail"/></td>
+        </tr>
+        <tr>
+            <td><label for="Password">Password</label></td>
+            <td><input type="password" name="Password"/></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Login</button></td>
+            <td id="err">@ViewBag.ErrorLogin</td>
+        </tr>
+    </table>
+</form>

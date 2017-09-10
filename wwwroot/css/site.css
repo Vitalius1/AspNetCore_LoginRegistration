@@ -1,0 +1,10 @@
+/*Write all of your CSS here*/
+*{
+    margin: 3px;
+}
+span{
+    color: red;
+}
+#err{
+    color: red;
+}
